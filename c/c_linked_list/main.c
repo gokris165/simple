@@ -64,7 +64,9 @@ int main() {
                 printf("...initialized list\n");
                 break;
             case '6':
-                printf("exiting...");
+                printf("exiting...\n");
+                deleteList(head);
+                free(head);
                 return 0;
             default:
                 printf("|...INVALID INPUT...|\n");
