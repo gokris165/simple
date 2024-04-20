@@ -9,7 +9,7 @@ struct LinkedList {
     struct LinkedList *next;
 };
 
-int getline(char text[], int limit); 
+int getLine(char text[], int limit); 
 int createList(char text[], struct LinkedList *current);
 void sortList(struct LinkedList *head, int word_count);
 int compareWords(char *this, int this_len, char *that, int that_len);
@@ -27,7 +27,7 @@ int main() {
     head->len = -1;
 
     printf("Write a sentence: ");               // prompt the user for a sentence
-    getline(text, MAXLEN);                      // read user input
+    getLine(text, MAXLEN);                      // read user input
     int wc = createList(text, head);            // create linkedlist
     sortList(head, wc);
 
@@ -58,7 +58,7 @@ int main() {
             case '5': 
                 deleteList(head);
                 printf("Write a sentence: ");
-                getline(text, MAXLEN);
+                getLine(text, MAXLEN);
                 int wc = createList(text, head);
                 sortList(head, wc);
                 printf("...initialized list\n");
@@ -164,7 +164,7 @@ void wordController(struct LinkedList *head, int flags) {
 
     char word[MAXLEN];
     printf("Enter word: ");
-    int wc = getline(word, MAXLEN);
+    int wc = getLine(word, MAXLEN);
 
     int i;
     for (i = 0; i < wc; i++) {
@@ -205,7 +205,7 @@ void displayMenu() {
 }
 
 // read user input
-int getline(char text[], int limit) {
+int getLine(char text[], int limit) {
     int i, c;
     for (i = 0; i < limit && (c = getchar()) != '\n'; i++) {
         text[i] = c;
