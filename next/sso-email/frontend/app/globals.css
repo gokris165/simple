@@ -1,0 +1,52 @@
+.center-login-button {
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  align-items: center;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left, .header-right {
+  width: 100px;
+  align-self: center;
+}
+
+.header-middle {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+.home-body {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hotel-image {
+  width: 500px;
+  border: black 3px solid;
+  border-radius: 23px;
+}
+
+.hotel-amenities {
+  border: black solid 4px;
+  border-radius: 10px;
+  width: 400px;
+  height: 100px;
+}
+
+/* .hotel-booking {
+  outline: pink solid 3px;
+} */
+
+
