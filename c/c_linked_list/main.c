@@ -43,26 +43,32 @@ int main() {
             case '1':
                 printList(head->next, wc);
                 break;
-            case '2':
+            case '2': {
                 int LOOKUP_FLAG = 1;
                 wordController(head, LOOKUP_FLAG);
                 break;
-            case '3':
+            }
+            case '3': {
                 int INSENSITIVE_LOOKUP_FLAG = 2;
                 wordController(head, INSENSITIVE_LOOKUP_FLAG);
                 break;
-            case '4':
+            }
+            case '4': {
+
                 int ADD_WORD_FLAG = 3;
                 wordController(head, ADD_WORD_FLAG);
+                wc++;
                 break;
-            case '5': 
+            }
+            case '5': {
                 deleteList(head);
                 printf("Write a sentence: ");
                 getLine(text, MAXLEN);
-                int wc = createList(text, head);
+                wc = createList(text, head);
                 sortList(head, wc);
                 printf("...initialized list\n");
                 break;
+            }
             case '6':
                 printf("exiting...\n");
                 deleteList(head);
@@ -177,14 +183,16 @@ void wordController(struct LinkedList *head, int flags) {
     wc = i; // length of word
 
     switch (flags) {
-        case 1:       // CASE SENSITIVE LOOKUP
+        case 1: {      // CASE SENSITIVE LOOKUP
             int SENSITIVE_FLAG = 0;
             lookup(word, wc, head, SENSITIVE_FLAG);
             break;
-        case 2:       // CASE INSENSITIVE LOOKUP
+        }
+        case 2: {      // CASE INSENSITIVE LOOKUP
             int INSENSITIVE_FLAG = 1;
             lookup(word, wc, head, INSENSITIVE_FLAG);
             break;
+        }
         case 3:       // ADD WORD
             addWord(word, wc, head);
             break;
