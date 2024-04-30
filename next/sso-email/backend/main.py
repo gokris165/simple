@@ -1,4 +1,11 @@
 from fastapi import FastAPI, Request
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+my_value = os.environ["MY_VALUE"]
+print(my_value)
 
 app = FastAPI(title="sso-email backend")
 
